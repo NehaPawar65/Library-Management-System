@@ -1,21 +1,26 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
+public class Library
+{
     private List<Book> books;
 
-    public Library() {
+    public Library() 
+    {
         books = new ArrayList<>();
     }
 
-    public void addBook(Book book) {
+    public void addBook(Book book) 
+    {
         books.add(book);
         System.out.println("Book added: " + book.getTitle());
     }
 
-    public void issueBook(int id) {
+    public void issueBook(int id) 
+    {
         for (Book book : books) {
-            if (book.getId() == id && !book.isIssued()) {
+            if (book.getId() == id && !book.isIssued()) 
+            {
                 book.issueBook();
                 System.out.println("Book issued: " + book.getTitle());
                 return;
@@ -24,9 +29,12 @@ public class Library {
         System.out.println("Book not found or already issued.");
     }
 
-    public void returnBook(int id) {
-        for (Book book : books) {
-            if (book.getId() == id && book.isIssued()) {
+    public void returnBook(int id)
+    {
+        for (Book book : books) 
+        {
+            if (book.getId() == id && book.isIssued())
+            {
                 book.returnBook();
                 System.out.println("Book returned: " + book.getTitle());
                 return;
@@ -35,8 +43,10 @@ public class Library {
         System.out.println("Book not found or not issued.");
     }
 
-    public void displayBooks() {
-        for (Book book : books) {
+    public void displayBooks()
+    {
+        for (Book book : books)
+        {
             System.out.println(book);
         }
     }
